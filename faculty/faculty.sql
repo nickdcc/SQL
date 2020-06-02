@@ -1,7 +1,6 @@
 
 CREATE database School_Information
 
-drop table faculty
 Create table Faculty (
 
 FacultyID int NOT NULL,
