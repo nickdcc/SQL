@@ -3,7 +3,7 @@
 --May 9 2020
 
 
-use [StandardizedReviews]
+use [data]
 
 --stored proc takes input date and returns # of review scores, 5th&95th  percentile and name, title, url for highest reviews
 Create procedure Metrics @todaysDate datetime AS (
