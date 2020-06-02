@@ -38,7 +38,7 @@ SELECT FacultyID, Name, department,
 	end as gender
 FROM Faculty
 
-CREATE PROCEDURE SortByTuple2 @OrderBy varchar(255)
+CREATE PROCEDURE SortByTuple @OrderBy varchar(255)
 as
 	SELECT * 
 	FROM Faculty
