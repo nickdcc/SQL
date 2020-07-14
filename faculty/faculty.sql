@@ -48,10 +48,6 @@ as
 
 GO
 
-
-
---8
-
 use master;
 GO
 drop database [School_Information]
