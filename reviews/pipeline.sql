@@ -26,8 +26,6 @@ Create procedure Metrics @todaysDate datetime AS (
 )
 GO 
 
-exec Metrics '2020-1-05' --for testing
-
 --stored proc takes input date and returns the next days records for an episodes Name, Title, URL, and its average review score 
 Create procedure NewsFeed @todaysDate datetime AS (
 	SELECT m.name NameOfShow, e.name Episode, p.url Link, avg(s.adjusted_score) AverageScore, DATEADD(day,1, @todaysDate) EndDate --DATEADD(day,1, @todaysDate) increases input date by +1
@@ -39,9 +37,6 @@ Create procedure NewsFeed @todaysDate datetime AS (
 	GROUP BY p.name, m.name, p.url, e.name
 )
 GO
-
-
-exec NewsFeed '2020-2-01' --for testing
 
 --stored proc runs two SELECT queries, the first returns the lowest rated episodes and score, and second query returns the highest rated episodes and scores
 create procedure BestandWorst AS 
@@ -58,8 +53,10 @@ create procedure BestandWorst AS
 		 JOIN  [dbo].[Episodes] e ON s.episode_id = e.episode_id
 		 GROUP BY e.name
 		 order by score DESC;
-	
-
-exec BestandWorst -- for testing
+		 
+		 
+exec NewsFeed '2020-2-01' 
+exec Metrics '2020-1-05' 
+exec BestandWorst
 
 
