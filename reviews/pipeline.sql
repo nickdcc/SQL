@@ -53,7 +53,7 @@ create procedure BestandWorst AS
 		 JOIN  [dbo].[Episodes] e ON s.episode_id = e.episode_id
 		 GROUP BY e.name
 		 order by score DESC;
-		 
+GO		 
 		 
 exec NewsFeed '2020-2-01' 
 exec Metrics '2020-1-05' 
